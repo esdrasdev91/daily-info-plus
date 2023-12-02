@@ -1,4 +1,3 @@
-// import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, StyleSheet, StatusBar, useColorScheme } from 'react-native';
 import WebView from 'react-native-webview';
 
