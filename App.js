@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// import { StatusBar } from 'expo-status-bar';
+import { SafeAreaView, StyleSheet, StatusBar, useColorScheme } from 'react-native';
+import WebView from 'react-native-webview';
 
 export default function App() {
+  const isDarkMode = useColorScheme() === 'dark';
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'}/>
+      <WebView
+      allowsFullscreenVideo={false}
+        source={{ uri: 'https://dailyinfooficial.blogspot.com/' }}
+      />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
   },
 });
